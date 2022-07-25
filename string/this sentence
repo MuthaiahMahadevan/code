@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+  int n,i=0;
+  //char ch=' ';
+ //isspace(ch);
+  string s="is2 sentence4 this1 a3";
+  char c[100];
+  int k=0;
+  n=s.length();
+  cout<<n<<endl;
+  while(i<n)
+  {
+    if(s[i]=='1')
+    {
+      for(int j=i;j<=i;j--)
+        {
+           //cout<<"hi";
+          if(s[j]== ' ')
+          {
+            // cout<<"hi"<<endl;
+            for(int t=j+1;t<i;t++)
+              {
+                cout<<"hi";
+                c[k]=s[t];
+                k++;
+              }
+            
+             break;
+          }
+         
+        }
+    }
+    i++;
+  }
+  cout<<s<<endl;
+  cout<<c;
+}
