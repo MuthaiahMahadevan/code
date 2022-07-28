@@ -1,40 +1,38 @@
-#include <iostream>
-#include <cstring>
-using namespace std;
-
-int main() {
-  int n,i=0;
-  //char ch=' ';
- //isspace(ch);
-  string s="is2 sentence4 this1 a3";
-  char c[100];
-  int k=0;
-  n=s.length();
-  cout<<n<<endl;
-  while(i<n)
-  {
-    if(s[i]=='1')
+class Main {
+  public static void main(String[] args) {
+    String s="is2 this1 sentence4 a3";
+    StringBuilder temp = new StringBuilder();
+    int w=1;
+    for(int i=0;i<s.length();i++)
+      {
+        if(s.charAt(i)==' ')
+          w++;
+      }
+    System.out.println(w);
+    String[] words=new String[w];
+  for(int i=0;i<s.length();i++)
     {
-      for(int j=i;j<=i;j--)
-        {
-           //cout<<"hi";
-          if(s[j]== ' ')
-          {
-            // cout<<"hi"<<endl;
-            for(int t=j+1;t<i;t++)
-              {
-                cout<<"hi";
-                c[k]=s[t];
-                k++;
-              }
-            
-             break;
-          }
-         
-        }
+      char c= s.charAt(i);
+      if(c==' ')
+        continue;
+      if(c>='1'&& c<='9')
+      {
+        words[c-'0'-1]=temp.toString();
+        temp.setLength(0);
+        continue;
+      }
+      temp.append(c);
     }
-    i++;
+    StringBuilder ans=new StringBuilder();
+    for(int i=0;i<words.length;i++)
+        {
+            ans.append(words[i]);
+            if(i==words.length-1)
+                break;
+            ans.append(' ');
+        }
+        ans.toString();
+    System.out.println(ans);
+    
   }
-  cout<<s<<endl;
-  cout<<c;
 }
