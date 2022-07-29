@@ -1,0 +1,26 @@
+Example 1:
+
+Input: S = "zvvo"
+Output: "zvo"
+Explanation: Only keep the first
+occurrence
+Example 2:
+
+Input: S = "gfg"
+Output: gf
+Explanation: Only keep the first
+occurrence
+
+class Solution {
+    String removeDups(String S) {
+        String str="";
+        for(int i=0;i<S.length();i++)
+        {
+            char ch=S.charAt(i);
+            if(str.indexOf(ch)==-1){
+                str+=ch;
+            }
+        }
+        return str;
+    }
+}
