@@ -1,0 +1,22 @@
+class Main {
+  public static void main(String[] args) {
+    String str="s g f";
+    int n=str.length();
+    char[] arr=str.toCharArray();
+    int k=0;
+    char[] ch=new char[n];
+    for(int i=0;i<n;i++)
+      {
+        if(arr[i]!=' ')
+        {
+          ch[k++]=arr[i];
+        }
+      }
+    str = new String(ch);
+    
+    
+    
+    
+    System.out.println(ch);
+  }
+}
