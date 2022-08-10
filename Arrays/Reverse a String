@@ -11,21 +11,22 @@ Input:
 s = for
 Output: rof
 
-class Reverse
+public class Main
 {
-    // Complete the function
-    // str: input string
-    public static String reverseWord(String str)
-    {
-        int n=str.length();
-        for(int i=0;i<n;i++)
+	public static void main(String[] args) {
+	    String str="yui";
+	     int n=str.length();  
+        StringBuilder s=new StringBuilder(str);
+        for(int i=0;i<n/2;i++)
         {
-                char t=str.charAt(i);
-                str.charAt(i)=str.charAt(n-i-1);
-                str.charAt(n-1-i)=t;
+            char t=str.charAt(i);
+            s.setCharAt(i,str.charAt(n-1-i));
+            s.setCharAt(n-1-i,t);
         }
-        System.out.println(str);
-        
-    }
+       
+        str=s.toString();
+         System.out.println(str);
+	}
 }
-//
+
+
