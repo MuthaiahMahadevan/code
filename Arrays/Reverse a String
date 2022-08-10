@@ -29,4 +29,28 @@ public class Main
 	}
 }
 
+2.
+public class Main
+{
+	public static void main(String[] args) {
+	    String str="yui";
+	     int n=str.length();
+	     int i;
+         char c[]=new char[n];
+         for(i=0;i<n;i++)
+         {
+             c[i]=str.charAt(i);
+         }
+         for(i=0;i<n/2;i++)
+         {
+             c[i]=str.charAt(n-1-i);
+             c[n-1-i]=str.charAt(i);
+         }
+         
+         str=new String(c);
+         System.out.println(str);
+         
+	}
+}
+
 
