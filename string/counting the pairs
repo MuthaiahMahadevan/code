@@ -1,0 +1,29 @@
+iinput : mfmfmm
+output : 2
+
+input :fmfmmfff
+output:3
+
+
+#include <stdio.h>
+
+int main(void) {
+    char str[100];
+    int i,len,count=0;
+    printf("ENTER THE STRING ONLY m & f");
+    gets(str);
+    len=strlen(str);
+    for (i=0;i<len;i++)
+      {
+        if(str[i]=='m'&&str[i+1]=='f'||str[i]=='f'&&str[i+1]=='m')
+        {
+          count= count+1;
+          i++;
+        }
+      }
+   printf("%d",count);
+     return 0;
+  
+   
+  
+}
