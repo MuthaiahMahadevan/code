@@ -1,0 +1,81 @@
+Problem
+Bob has a playlist of 
+ songs, each song has a singer associated with it (denoted by an integer)
+
+Favourite singer of Bob is the one whose songs are the most on the playlist
+
+Count the number of Favourite Singers of Bob
+
+Input Format 
+
+The first line contains an integer 
+, denoting the number of songs in Bob's playlist.
+
+The following input contains 
+ integers, 
+ integer denoting the singer of the 
+ song.
+
+Output Format
+
+Output a single integer, the number of favourite singers of Bob
+Sample Input
+5
+1 1 2 2 4
+Sample Output
+2
+
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i] = sc.nextInt();
+        }
+        int f[] = new int[n];
+        Arrays.sort(a);
+        int count = 1,k=0;
+        for(int i=0;i<n-1;i++)
+        {
+            if(a[i] == a[i+1])
+            {
+                count++;
+            }
+            else
+            {
+                f[k++] = count;
+                count = 1;
+            }
+        }
+        if(a[n-1] == a[n-2])
+        {
+            f[k] = f[k] + 1;
+        }
+        else
+        {
+            f[k++] = 1;
+        }
+        int max = f[0];
+        for(int i=0;i<k;i++)
+        {
+            if(f[i] > max)
+            {
+                max = f[i];
+            }
+        }
+        int ans = 0;
+        for(int i=0;i<n;i++)
+        {
+            if(f[i] == max)
+                ans++;
+        }
+        System.out.print(ans);
+    }
+}
+
+
+
